@@ -1,0 +1,408 @@
+.treebo-login {
+  --login-teal: var(--primary);
+  --login-teal-dark: oklch(0.40 0.065 169);
+  --login-wordmark: var(--chart-3);
+  --login-gold: var(--chart-2);
+  --login-ink: var(--foreground);
+  --login-grey: var(--muted-foreground);
+  --login-white: var(--card);
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow-x: hidden;
+  color: var(--login-ink);
+  background:
+    radial-gradient(circle at 78% 12%, oklch(0.98 0.055 94 / 72%) 0, oklch(0.98 0.055 94 / 0%) 25%),
+    linear-gradient(145deg, oklch(0.91 0.065 220) 0%, oklch(0.84 0.075 207) 40%, oklch(0.69 0.079 190) 100%);
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+.treebo-login::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 38% -12% -28%;
+  opacity: 0.4;
+  background:
+    radial-gradient(ellipse at 15% 100%, oklch(1 0 0 / 45%) 0%, transparent 48%),
+    repeating-radial-gradient(ellipse at 50% 115%, transparent 0 54px, oklch(1 0 0 / 18%) 56px 58px, transparent 60px 94px);
+  pointer-events: none;
+}
+
+.treebo-login-header {
+  display: flex;
+  align-items: center;
+  min-height: 88px;
+  padding: 16px clamp(24px, 5vw, 72px);
+  background: var(--login-white);
+  box-shadow: 0 4px 24px oklch(0.28 0.055 200 / 8%);
+}
+
+.treebo-login-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.treebo-login-emblem {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 3px solid var(--login-gold);
+  border-radius: 50%;
+  color: var(--login-teal-dark);
+  background: oklch(0.98 0.025 91);
+  box-shadow: inset 0 0 0 3px var(--login-white), 0 3px 10px oklch(0.45 0.08 80 / 16%);
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.treebo-login-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.treebo-login-brand-name {
+  color: var(--login-ink);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.treebo-login-product-name {
+  color: var(--login-wordmark);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.treebo-login-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 480px);
+  align-items: center;
+  gap: clamp(48px, 8vw, 112px);
+  width: min(1160px, 100%);
+  min-height: calc(100svh - 88px);
+  margin: 0 auto;
+  padding: 56px 32px 64px;
+  box-sizing: border-box;
+}
+
+.treebo-login-features {
+  display: grid;
+  gap: 24px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.treebo-login-feature-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 216px;
+  padding: 30px 32px;
+  border: 1px solid oklch(1 0 0 / 16%);
+  border-radius: 24px;
+  color: var(--login-white);
+  background:
+    radial-gradient(circle at 100% 0%, oklch(1 0 0 / 12%), transparent 44%),
+    linear-gradient(135deg, var(--login-teal), var(--login-teal-dark));
+  box-shadow: 0 22px 48px oklch(0.26 0.07 180 / 22%);
+  box-sizing: border-box;
+}
+
+.treebo-login-feature-card::after {
+  content: "";
+  position: absolute;
+  right: -44px;
+  bottom: -70px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid oklch(1 0 0 / 12%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 26px oklch(1 0 0 / 4%), 0 0 0 54px oklch(1 0 0 / 3%);
+  pointer-events: none;
+}
+
+.treebo-login-feature-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+
+.treebo-login-feature-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid oklch(1 0 0 / 25%);
+  border-radius: 15px;
+  background: oklch(1 0 0 / 10%);
+}
+
+.treebo-login-feature-icon svg {
+  width: 25px;
+  height: 25px;
+  stroke-width: 1.7;
+}
+
+.treebo-login-feature-pill {
+  padding: 5px 11px;
+  border-radius: 999px;
+  color: oklch(0.32 0.055 76);
+  background: oklch(0.89 0.09 86);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.treebo-login-feature-card h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 9px;
+  color: var(--login-white);
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.3;
+}
+
+.treebo-login-feature-card p {
+  position: relative;
+  z-index: 1;
+  max-width: 390px;
+  margin: 0;
+  color: oklch(1 0 0 / 84%);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.treebo-login-feature-line {
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin-top: 20px;
+  border-radius: 999px;
+  background: var(--login-gold);
+}
+
+.treebo-login-card {
+  position: relative;
+  width: 100%;
+  padding: 42px 40px 32px;
+  overflow: hidden;
+  border: 1px solid oklch(1 0 0 / 80%);
+  border-radius: 24px;
+  background: var(--login-white);
+  box-shadow: 0 28px 70px oklch(0.25 0.065 195 / 22%);
+  box-sizing: border-box;
+}
+
+.treebo-login-card-accent {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 58px;
+  height: 4px;
+  border-radius: 0 0 4px 4px;
+  background: var(--login-gold);
+}
+
+.treebo-login-eyebrow {
+  margin: 0 0 15px;
+  color: var(--login-wordmark);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.treebo-login-card h1 {
+  margin: 0;
+  color: var(--login-ink);
+  font-size: clamp(27px, 2.5vw, 33px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.35;
+}
+
+.treebo-login-card h1 span {
+  display: block;
+  color: var(--login-wordmark);
+  font-weight: 700;
+}
+
+.treebo-login-subtitle {
+  margin: 13px 0 31px;
+  color: var(--login-grey);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.treebo-login-google-button {
+  display: flex;
+  width: 100%;
+  min-height: 54px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  box-shadow: 0 5px 16px oklch(0.32 0.05 180 / 10%);
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+  transition: box-shadow 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+.treebo-login-google-button:hover:not(:disabled) {
+  box-shadow: 0 8px 22px oklch(0.37 0.07 180 / 18%);
+  transform: translateY(-1px);
+}
+
+.treebo-login-google-button:focus-visible {
+  outline: 3px solid oklch(0.483 0.073 185 / 28%);
+  outline-offset: 3px;
+}
+
+.treebo-login-google-button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.treebo-login-google-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--login-white);
+  box-shadow: 0 1px 5px oklch(0.25 0.02 220 / 12%);
+}
+
+.treebo-login-google-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.treebo-login-note {
+  margin: 15px 0 0;
+  color: var(--login-grey);
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.treebo-login-alert {
+  margin: 19px 0 0;
+  padding: 12px 14px;
+  border: 1px solid oklch(0.87 0.055 15);
+  border-radius: 12px;
+  color: oklch(0.51 0.18 20);
+  background: oklch(0.96 0.025 15);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.treebo-login-footer {
+  margin: 30px 0 0;
+  padding-top: 21px;
+  border-top: 1px solid oklch(0.92 0.012 210);
+  color: var(--login-grey);
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .treebo-login-content {
+    grid-template-columns: minmax(0, 440px);
+    justify-content: center;
+    gap: 28px;
+    padding-top: 40px;
+  }
+
+  .treebo-login-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+  }
+
+  .treebo-login-feature-card {
+    min-height: 190px;
+    padding: 24px;
+  }
+
+  .treebo-login-feature-card h2 {
+    font-size: 21px;
+  }
+
+  .treebo-login-feature-pill,
+  .treebo-login-feature-line {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .treebo-login-header {
+    min-height: 74px;
+    padding: 12px 16px;
+  }
+
+  .treebo-login-emblem {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+
+  .treebo-login-product-name {
+    font-size: 17px;
+  }
+
+  .treebo-login-brand-name {
+    font-size: 10px;
+  }
+
+  .treebo-login-content {
+    display: block;
+    width: 100%;
+    min-height: calc(100svh - 74px);
+    padding: 28px 16px 32px;
+  }
+
+  .treebo-login-features {
+    display: none;
+  }
+
+  .treebo-login-card {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 34px 24px 26px;
+    border-radius: 22px;
+  }
+
+  .treebo-login-card-accent {
+    left: 24px;
+  }
+
+  .treebo-login-card h1 {
+    font-size: 27px;
+  }
+
+  .treebo-login-subtitle {
+    margin-bottom: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .treebo-login-google-button {
+    transition: none;
+  }
+}

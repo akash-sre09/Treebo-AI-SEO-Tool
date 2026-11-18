@@ -1,0 +1,15 @@
+CREATE TABLE public.probe_runs (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), city text NOT NULL, engine text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE public.probe_results (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), run_id uuid NOT NULL REFERENCES public.probe_runs(id) ON DELETE CASCADE, prompt text NOT NULL, engine text NOT NULL, answer_text text NOT NULL DEFAULT '', treebo_mentioned boolean NOT NULL DEFAULT false, treebo_rank int, competitors_mentioned text[] NOT NULL DEFAULT '{}', brands jsonb NOT NULL DEFAULT '[]', wrong_facts jsonb NOT NULL DEFAULT '[]', sources text[] NOT NULL DEFAULT '{}', created_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX ON public.probe_results(run_id);
+CREATE TABLE public.briefs (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), city text NOT NULL, slug text NOT NULL, brief jsonb NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE public.pages (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), brief_id uuid REFERENCES public.briefs(id) ON DELETE SET NULL, city text NOT NULL, slug text NOT NULL, html text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
+GRANT SELECT ON public.probe_runs, public.probe_results, public.briefs, public.pages TO anon, authenticated;
+GRANT ALL ON public.probe_runs, public.probe_results, public.briefs, public.pages TO service_role;
+ALTER TABLE public.probe_runs ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.probe_results ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.briefs ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.pages ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "public read" ON public.probe_runs FOR SELECT TO anon, authenticated USING (true);
+CREATE POLICY "public read" ON public.probe_results FOR SELECT TO anon, authenticated USING (true);
+CREATE POLICY "public read" ON public.briefs FOR SELECT TO anon, authenticated USING (true);
+CREATE POLICY "public read" ON public.pages FOR SELECT TO anon, authenticated USING (true);

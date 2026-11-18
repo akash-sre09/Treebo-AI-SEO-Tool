@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793345736192,
+      "tag": "0000_probe_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793348047822,
+      "tag": "0001_pages_copy",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793348709488,
+      "tag": "0002_pages_published_at",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793349569457,
+      "tag": "0003_pages_publish_simulated",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793354770501,
+      "tag": "0004_verified_hotels_and_probe_extractions",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1794686076971,
+      "tag": "0005_restrict_app_to_treebo_google_users",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+ALTER TABLE public.pages ADD COLUMN IF NOT EXISTS publish_simulated boolean NOT NULL DEFAULT false;
